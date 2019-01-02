@@ -89,6 +89,9 @@ class GutterView {
 }
 
 class GutterLine {
+
+  private readonly GUTTER_ELEMENT_CLASS_NAME = "CodeMirror-gutter-element"
+
   dom: HTMLElement
   lineNo: number = -1
   height: number = -1
@@ -97,7 +100,7 @@ class GutterLine {
 
   constructor(lineNo: number, height: number, above: number, below: number, formatNo: (lineNo: number) => string) {
     this.dom = document.createElement("div")
-    this.dom.className = "CodeMirror-gutter-element"
+    this.dom.className = this.GUTTER_ELEMENT_CLASS_NAME
     this.update(lineNo, height, above, below, formatNo)
   }
 
